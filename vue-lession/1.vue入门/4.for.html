@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--要重复谁  就在谁身上写 v-for-->
+    <ul>
+        <!-- a 变量代表的就是arr中的某一个 1.0-->
+        <!-- track-by="$index" 这个属性是强制数组按照索引进行循环 否则数组内容重复 会报错-->
+        <li v-for="(index,a) in arr" track-by="$index">
+            {{a}} {{index}}
+        </li>
+    </ul>
+</div>
+<script src="1.0/vue.min.js"></script>
+<script>
+    //绑定数组
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'zfpx',
+            arr:['im','touch','im']
+
+        }
+    })
+</script>
+</body>
+</html>

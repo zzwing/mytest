@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <!--在2.0中没有声明过 ￥index 不能再使用了 说明track-by 也废弃掉了-->
+        <li v-for="(a,index) in arr">{{a}} {{index}}</li>
+    </ul>
+</div>
+<script src="2.0/vue.min.js"></script>
+<script>
+    //绑定数组
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'zfpx',
+            arr:['im','touch','im']
+            obj:
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- 如果v-for 不使用（） 那就是val  使用（）在1.0 是key，value 在2.0中 是value，key -->
+    <li v-for="(val,key) in obj">
+        {{key}} {{val}}
+    </li>
+</div>
+<script src="2.0/vue.min.js"></script>
+<script>
+    //绑定数组
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'zfpx',
+            obj:{name:'zfpx',age:8}
+
+        }
+    })
+</script>
+</body>
+</html>

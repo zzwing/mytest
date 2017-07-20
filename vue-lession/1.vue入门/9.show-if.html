@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--v-show 隐藏的只是样式 如果频繁切换显示隐藏 就使用v-show-->
+    <!--v-if remove dom  不频繁切换时，判断数据是否存在 使用v-if -->
+
+    <div v-show="flag">是否为true 为true 显示是否消失</div>
+    <div v-if="flag">是否为true 为true 显示是否消失</div>
+    <div v-if="obj.name">
+        {{obj.name}}
+    </div>
+</div>
+<script src="2.0/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            flag:false,
+            obj:{name:1}
+        }
+    })
+</script>
+</body>
+</html>

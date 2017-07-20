@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- v-model v-html v-on  简写成 @click -->
+    <button @click="fn">增加手机</button>
+    <ul>
+        <li v-for="iphone in arr">{{iphone}}</li>
+    </ul>
+</div>
+<script src="2.0/vue.min.js"></script>
+<script>
+    //绑定事件
+    //加括号 一般用于传参 如果传递参数 要手动增加e
+    var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'zfpx',
+                obj:{name:'zfpx',age:8},
+                arr:['iphone5','iphone6','iphone7']
+            },
+            methods:{
+                fn(e){
+                    //所有方法中的this指向的都是实例
+                    this.arr.push('iphone8');
+                }
+            }
+    });
+    //所有的数据都会挂载在vm上
+    console.log(vm);
+
+</script>
+</body>
+</html>
