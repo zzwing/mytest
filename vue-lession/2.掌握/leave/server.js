@@ -17,5 +17,8 @@ app.post('/leaves',function (req,res) {
     let msg = req.body;
     messages.push(msg);
     res.send(messages);
-})
+});
+app.get('/leaves',function (req,res) {
+    res.send(messages);
+});
 app.listen(8080);

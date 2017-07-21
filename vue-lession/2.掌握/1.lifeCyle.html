@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+</div>
+<script src="1.0/vue.min.js"></script>
+<script>
+    //vue 完整的生命周期 1.0
+    //钩子函数 每当完成一个周期就调用的函数
+    var vm = new Vue({
+        el:'#app',//如果没有el元素 就不会编译
+        data:{
+            msg:'zfpx'
+        },
+        init(){
+            alert('初始化');
+        },
+        created(){
+            alert('初始化完成');
+        },
+        beforeCompile(){
+            alert('编译前');
+        },
+        compiled(){
+            alert('编译后');
+        },
+        ready(){
+            //页面首次加载获取之前 在ready方法后获取数据
+            alert('准备好了');
+        },
+        beforeDestroy(){
+            alert('销毁前');
+        },
+        destroyed(){
+            alert('销毁后');
+        }
+
+
+    }) ;
+    vm.$mount('#app');//手动挂载绑定范围
+    vm.$destroy();//强制让实例销毁，但是编译好后的数据不会销毁
+</script>
+</body>
+</html>

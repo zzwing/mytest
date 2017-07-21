@@ -9,6 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <h3 id="err"></h3>
             <form method="POST">
                 <div class="form-group">
                     <label for="username" class="control-label">用户名</label>
@@ -25,6 +26,25 @@
         </div>
     </div>
 </div>
-
+<script>
+    let msg = getCookie('upErr');
+    if(msg){
+        err.innerHTML =  decodeURIComponent(msg);
+    }
+    function getCookie(key){
+        if(document.cookie){
+            var parts = document.cookie.split('; ');
+            for(var i=0;i<parts.length;i++){
+                var vals = parts[i].split('=');
+                if(vals[0]==key){
+                    return vals[1];
+                }
+            }
+            return "";
+        }else{
+            return "";
+        }
+    }
+</script>
 </body>
 </html>

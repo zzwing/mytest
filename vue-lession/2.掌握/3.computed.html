@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{total}}
+    {{count}}
+</div>
+<script src="2.0/vue.min.js"></script>
+<script>
+    //计算数学
+    var vm = new Vue({
+        el:'#app',
+        a:1,
+        data:{
+            price:20,
+            count:10
+        },
+        //获取值 - 设置值 设置total 影响count
+        computed:{
+            total:{
+                get:function(){
+                    return this.price * this.count;
+                },
+                set:function (total) {
+                    this.count = total/this.price;
+                }
+            }
+        }
+    });
+    vm.$watch('total',function (newVal,oldVal) {
+        console.log(newVal);
+        console.log(oldVal);
+    })
+    vm.total = 300;
+    vm.$el.style.background= 'red';
+    //获取当前实例上挂载的数据
+//    console.log(vm.$data);
+//    console.log(vm.$options);//获取自定义属性
+
+
+
+</script>
+</body>
+</html>
